@@ -16,8 +16,8 @@ const STEPS = [
     id: "extract",
     title: "Drop manual data entry",
     body: "AI reads any layout, in any language, without templates. Validation forms appear only when something looks off.",
-    image: "/images/hero-dashboard.jpg",
-    alt: "Accounts payable dashboard showing extracted invoice data",
+    image: "/images/ap-analytics-dashboard.png",
+    alt: "Accounts payable analytics dashboard showing extracted invoice data",
   },
   {
     id: "match",

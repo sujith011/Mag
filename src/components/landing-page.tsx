@@ -12,7 +12,6 @@ import {
 } from "@phosphor-icons/react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { CustomerMarquee } from "@/components/customer-marks";
 import { HowItWorks } from "@/components/how-it-works";
 import { DemoForm } from "@/components/demo-form";
 import { FaqList } from "@/components/faq-list";
@@ -69,43 +68,17 @@ const CAPABILITIES = [
   },
 ] as const;
 
-const STORIES = [
-  {
-    quote:
-      "Most invoices now post without anyone touching them. We can finally see the life of every invoice.",
-    name: "Priya Menon",
-    role: "Director of Accounts Payable, Northline Distribution",
-    photo: "/images/portrait-priya.jpg",
-  },
-  {
-    quote:
-      "We added two business lines without adding AP headcount. The controls kept up.",
-    name: "Marcus Hale",
-    role: "VP Finance, Allard Group",
-    photo: "/images/portrait-marcus.jpg",
-  },
-  {
-    quote:
-      "We wanted 80% electronic invoicing. We hit it in the first month, and we are at 92% now.",
-    name: "Elena Ruiz",
-    role: "Controller, Harbor Field Retail",
-    photo: "/images/portrait-elena.jpg",
-  },
-] as const;
-
 export function LandingPage() {
   return (
     <div id="top" className="min-h-dvh bg-canvas text-ink">
       <SiteHeader />
       <main>
         <Hero />
-        <CustomerMarquee />
         <Impact />
         <Platform />
         <HowItWorks />
         <Capabilities />
         <Roles />
-        <Stories />
         <DemoAndFaq />
       </main>
       <SiteFooter />
@@ -163,11 +136,11 @@ function Hero() {
         >
           <div className="overflow-hidden rounded-2xl bg-muted p-1.5 shadow-lift sm:rounded-3xl sm:p-2">
             <img
-              src="/images/hero-dashboard.jpg"
-              alt="MagFlow.ai accounts payable dashboard on a desktop monitor"
-              width={980}
-              height={735}
-              className="img-frame aspect-video max-h-56 w-full rounded-xl object-cover object-center sm:max-h-80 sm:rounded-2xl desk:max-h-none desk:aspect-photo"
+              src="/images/ap-analytics-dashboard.png"
+              alt="MagFlow.ai accounts payable analytics dashboard"
+              width={1024}
+              height={682}
+              className="img-frame aspect-[1024/682] w-full rounded-xl object-contain sm:rounded-2xl"
             />
           </div>
         </div>
@@ -407,64 +380,9 @@ function Roles() {
   );
 }
 
-function Stories() {
-  const featured = STORIES[0];
-  const rest = STORIES.slice(1);
-
-  return (
-    <section id="customers" className="page-section scroll-mt-24 bg-muted">
-      <div className="page-shell">
-        <Reveal>
-          <h2 className="text-title font-medium text-ink">
-            Finance teams who got their time back
-          </h2>
-        </Reveal>
-        <Reveal className="mt-8 grid grid-cols-1 gap-4 desk:grid-cols-2 desk:gap-6 wide:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-          <figure className="rounded-2xl bg-canvas p-5 sm:rounded-3xl sm:p-8 desk:col-span-2 desk:p-10 wide:col-span-1">
-            <div className="flex items-center gap-4">
-              <img
-                src={featured.photo}
-                alt=""
-                className="img-frame size-14 shrink-0 rounded-full object-cover sm:size-16"
-              />
-              <figcaption className="min-w-0">
-                <p className="font-medium text-ink">{featured.name}</p>
-                <p className="text-sm text-ink-soft">{featured.role}</p>
-              </figcaption>
-            </div>
-            <blockquote className="mt-5 max-w-[40ch] text-lg font-medium leading-snug tracking-tight text-ink sm:mt-8 sm:text-2xl">
-              “{featured.quote}”
-            </blockquote>
-          </figure>
-          <div className="grid grid-cols-1 gap-4 desk:col-span-2 desk:grid-cols-2 desk:gap-6 wide:col-span-1 wide:grid-cols-1">
-            {rest.map((story) => (
-              <figure key={story.name} className="rounded-2xl bg-canvas p-5 sm:rounded-3xl sm:p-7">
-                <div className="flex items-center gap-3">
-                  <img
-                    src={story.photo}
-                    alt=""
-                    className="img-frame size-12 shrink-0 rounded-full object-cover"
-                  />
-                  <figcaption className="min-w-0">
-                    <p className="text-sm font-medium text-ink">{story.name}</p>
-                    <p className="text-xs text-ink-soft">{story.role}</p>
-                  </figcaption>
-                </div>
-                <blockquote className="mt-4 text-base leading-relaxed text-ink sm:mt-5">
-                  “{story.quote}”
-                </blockquote>
-              </figure>
-            ))}
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
 function DemoAndFaq() {
   return (
-    <section id="demo" className="page-section scroll-mt-24 bg-canvas">
+    <section id="demo" className="page-section scroll-mt-24 border-t border-line bg-muted">
       <div className="page-shell grid grid-cols-1 gap-8 wide:grid-cols-2 wide:gap-16">
         <Reveal>
           <span className="inline-flex items-center rounded-full border border-line bg-muted px-3 py-1.5 text-sm font-medium text-ink sm:px-4">

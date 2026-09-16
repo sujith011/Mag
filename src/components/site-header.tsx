@@ -8,7 +8,6 @@ import { MagFlowMark } from "@/components/magflow-mark";
 const NAV = [
   { href: "#platform", label: "Platform" },
   { href: "#how-it-works", label: "How it works" },
-  { href: "#customers", label: "Customers" },
   { href: "#faq", label: "FAQ" },
 ];
 
