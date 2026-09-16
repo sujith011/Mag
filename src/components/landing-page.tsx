@@ -16,6 +16,8 @@ import { HowItWorks } from "@/components/how-it-works";
 import { DemoForm } from "@/components/demo-form";
 import { FaqList } from "@/components/faq-list";
 import { Reveal } from "@/components/reveal";
+import { AccountsPayableDashboard } from "@/components/accounts-payable-dashboard";
+import { HomeScrollReset } from "@/components/home-scroll-reset";
 import { cn } from "@/lib/cn";
 
 const STATS = [
@@ -71,6 +73,7 @@ const CAPABILITIES = [
 export function LandingPage() {
   return (
     <div id="top" className="min-h-dvh bg-canvas text-ink">
+      <HomeScrollReset />
       <SiteHeader />
       <main>
         <Hero />
@@ -89,10 +92,6 @@ export function LandingPage() {
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-canvas">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgb(236_32_32/0.07)_0%,rgb(255_255_255/0)_58%)]"
-      />
       <div className="page-gutter page-shell relative grid grid-cols-1 items-center gap-6 py-7 desk:grid-cols-2 desk:gap-10 desk:py-12 wide:gap-14 wide:py-14">
         <div className="min-w-0">
           <span className="hero-enter inline-flex max-w-full items-center rounded-full border border-line bg-canvas/70 px-3 py-1.5 text-xs font-medium text-ink sm:px-4 sm:text-sm">
@@ -131,17 +130,11 @@ function Hero() {
           </div>
         </div>
         <div
-          className="hero-enter min-w-0 wide:justify-self-end"
+          className="hero-enter w-full max-w-[34rem] min-w-0 justify-self-end"
           style={{ animationDelay: "180ms" }}
         >
-          <div className="overflow-hidden rounded-2xl bg-muted p-1.5 shadow-lift sm:rounded-3xl sm:p-2">
-            <img
-              src="/images/ap-analytics-dashboard.png"
-              alt="MagFlow.ai accounts payable analytics dashboard"
-              width={1024}
-              height={682}
-              className="img-frame aspect-[1024/682] w-full rounded-xl object-contain sm:rounded-2xl"
-            />
+          <div className="rounded-2xl bg-muted p-1.5 shadow-lift sm:rounded-3xl sm:p-2">
+            <AccountsPayableDashboard />
           </div>
         </div>
       </div>
